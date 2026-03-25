@@ -87,11 +87,12 @@ Frequently Asked Questions:
 	of the function.
 
 4. Why do we use functools.wraps(func) inside the decorator?
-	functools.wraps(func) helps keep the original function name and docstring
-	after decoration. In this basic version, we skipped it to keep the code very
-	simple for beginners.
+  functools.wraps(func) preserves the wrapped function's metadata (like name,
+  docstring, and signature), which helps with debugging, introspection, and
+  tools that rely on accurate function information.
 
 5. Can we use this decorator for any function?
-  This simple version works for functions with no arguments, like this example.
-  To support any function, we can use *args and **kwargs in wrapper().
+  Yes, decorators can be written for almost any function.
+  This basic version handles only no-argument functions; using *args,
+  **kwargs, and returning the result makes it broadly reusable.
 """
